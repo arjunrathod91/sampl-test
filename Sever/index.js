@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect('mongodb+srv://arjunrathod91:arjunrathod91@helpyourswebsite.a13bvd6.mongodb.net/sample?retryWrites=true&w=majority')
+mongoose.connect("mongodb+srv://arjunrathod91:arjunrathod91@helpyourswebsite.a13bvd6.mongodb.net/sample?retryWrites=true&w=majority")
 
 app.post('/newUser',(req,res)=>{
     Model.create(req.body)
@@ -18,6 +18,11 @@ app.post('/newUser',(req,res)=>{
     .catch((err)=>{
         console.log(err)
         res.json(err)})
+})
+
+app.get('/',(req,res)=>{
+    const sample = "<h1>Hello There</h1>"
+    res.send(sample)
 })
 
 app.listen(process.env.PORT,()=>{
