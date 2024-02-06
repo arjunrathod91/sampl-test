@@ -5,7 +5,9 @@ const Model = require('./Model/user')
 const dotenv = require('dotenv').config();
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ['https://sample-testing-3qhjwkkxr-arjun-rathods-projects.vercel.app/']
+  }))
 
 mongoose.connect("mongodb+srv://arjunrathod91:arjunrathod91@helpyourswebsite.a13bvd6.mongodb.net/sample?retryWrites=true&w=majority")
 
