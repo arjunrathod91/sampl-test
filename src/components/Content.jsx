@@ -8,7 +8,7 @@ const Content = () => {
 
   function submit(e){
     e.preventDefault()
-    axios.post('http://localhost:7000/newUser',{name,email,password})
+    axios.post('https://backend-app-gules.vercel.app/newUser',{name,email,password})
     .then((data)=>console.log(data))
     .catch(err=>console.log(err))
   }
